@@ -76,7 +76,7 @@ console.log(`Reminder set for: ${reminderDate}`);
 
 
 app.get('/', (req, res) => {
-    res.send('here is the server');
+    res.json('here is the server');
 })
 
 app.listen(PORT, () => console.log(`Server is running at port http://localhost:${PORT} 🚀`));

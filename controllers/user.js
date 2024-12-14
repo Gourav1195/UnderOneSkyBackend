@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { User, Reminder, Post } from '../database/db.js'
 
-const jwt_sec = process.env.JWT_SECRET ;
+const jwt_sec = process.env.JWT_SECRET || "Under_One_Sky" ;
 
 //sign-in/sign-up
 export const signUp = async(req, res) => {
