@@ -16,7 +16,13 @@ import schedule from 'node-schedule'
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://under-one-sky-client.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
@@ -66,23 +72,6 @@ schedule.scheduleJob(reminderDate, () => {
 });
 
 console.log(`Reminder set for: ${reminderDate}`);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
