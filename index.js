@@ -16,13 +16,15 @@ import schedule from 'node-schedule'
 
 dotenv.config();
 const app = express();
-app.use(cors(
-  {
-    origin: ["https://under-one-sky-client.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-));
+app.use(cors());
+
+// app.use(cors(
+//   {
+//     origin: ["https://under-one-sky-client.vercel.app"],
+//     methods: ["POST", "GET", "PUT", "PATCH"],
+//     credentials: true
+//   }
+// ));
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
@@ -76,7 +78,7 @@ console.log(`Reminder set for: ${reminderDate}`);
 
 
 app.get('/', (req, res) => {
-    res.json('here is the server');
+    res.send('Backend server is working fine');
 })
 
 app.listen(PORT, () => console.log(`Server is running at port http://localhost:${PORT} 🚀`));
