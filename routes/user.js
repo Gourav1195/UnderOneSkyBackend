@@ -4,6 +4,7 @@ import {signIn, signUp,
    createReminder, getReminder, postReminder, updateReminders,
    publicLogin, adminLogin, editorLogin,
    getPost, savePost,
+   leaderboardData,
 } from "../controllers/user.js"
 
 const router = express.Router();
@@ -17,6 +18,10 @@ router.get('/editor', authenticate, authorize(['admin', 'editor']), editorLogin)
 
 router.get('/post', getPost);
 router.post('/post', savePost);
+
+
+router.get('/leaderboard', leaderboardData);
+ 
 
 // router.get('/reminder', authenticateToken, getReminder);
 // router.post('/reminder', authenticateToken, postReminder);

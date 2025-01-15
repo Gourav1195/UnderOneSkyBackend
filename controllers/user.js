@@ -159,3 +159,18 @@ export const getPost = async(req, res) => {
     res.error(500).json({message:"Server error", error})
   }
 }
+
+export const leaderboardData = async (req, res) => {
+  try {
+    // Fetch top 10 users sorted by score in descending order
+    const topPlayers = await User.find()
+      .sort({ score: -1 })
+     //  .limit(10)
+     //  .select('username score matches winrate region');
+     res.status(200).json(topPlayers);
+   //  res.json(topPlayers);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to fetch leaderboard data', err: err.message
+     });
+  }
+}

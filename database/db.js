@@ -5,7 +5,25 @@ const userSchema = new mongoose.Schema({
     email: { type: String, }, 
     role: {type: String, default: 'user'},
     // managerEmail: { type: String, required: true,}, 
+    
     password: { type: String, required: true}, 
+    score: {
+        type: Number,
+        default: 0,
+      },
+      matches: {
+        type: Number,
+        default: 0,
+      },
+      winrate: {
+        type: Number,
+        default: 0,
+      },
+      region: {
+        type: String,
+        default: "Global",
+      },
+    }, { timestamps: true 
 })
 const User = mongoose.model("User", userSchema);
 
