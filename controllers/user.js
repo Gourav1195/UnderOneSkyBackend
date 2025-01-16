@@ -2,7 +2,6 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { User, Reminder, Post } from '../database/db.js'
-import axios from 'axios'
 import { getGroqResponse } from '../config/grogChat.js'
 
 const jwt_sec = process.env.JWT_SECRET || "Under_One_Sky" ;
