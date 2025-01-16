@@ -2,6 +2,8 @@
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { User, Reminder, Post } from '../database/db.js'
+import axios from 'axios'
+import { getGroqResponse } from '../config/grogChat.js'
 
 const jwt_sec = process.env.JWT_SECRET || "Under_One_Sky" ;
 
@@ -173,4 +175,44 @@ export const leaderboardData = async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch leaderboard data', err: err.message
      });
   }
-}
+};
+
+export const chatWithAI = async(req, res)=>{
+  try {
+    const { message } = req.body; // Get user message from request
+    const reply = await getGroqResponse(message); // Get AI response
+    res.json({ reply });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+// export const chatPost = async(req, res)=>{
+//   const { message } = req.body;
+
+//   try {
+//       const response = await axios.post(
+//           "https://api.groq.com/v1/", // Replace with actual Groq endpoint
+//           {
+//               model: "mixtral", // Adjust the model as per Groq's documentation
+//               messages: [{ role: "user", content: message }],
+//               temperature: 0.7,
+//           },
+//           {
+//               headers: {
+//                   Authorization: `Bearer ${process.env.GROQ_CLOUD_API_KEY}`,
+//                   "Content-Type": "application/json",
+//               },
+//           }
+//       );
+
+//       res.json(response.data);
+//   } catch (error) {
+//       res.status(500).json({ error: error.message });
+//   }
+// }
+
+// export const chatGet = async(req, res)=>{
+
+// }

@@ -5,11 +5,11 @@ import dotenv from 'dotenv'
 dotenv.config();
 // Sample user data
 const users = [
-  { name: 'JohnDoe', email: 'john@example.com', password: 'password123', score: 1500, matches: 30, winrate: 75.5, region: 'USA' },
-  { name: 'JaneSmith', email: 'jane@example.com', password: 'password123', score: 1800, matches: 40, winrate: 80.0, region: 'Europe' },
-  { name: 'PlayerOne', email: 'player1@example.com', password: 'password123', score: 1200, matches: 25, winrate: 70.2, region: 'Asia' },
-  { name: 'ProGamer', email: 'pro@example.com', password: 'password123', score: 2200, matches: 50, winrate: 85.4, region: 'Australia' },
-  { name: 'AlphaWolf', email: 'alpha@example.com', password: 'password123', score: 2000, matches: 45, winrate: 82.1, region: 'India' },
+  { name: 'JohnDoe', email: 'john@example.com', password: 'password123', score: 1500,  winrate: 75.5, region: 'USA' },
+  { name: 'JaneSmith', email: 'jane@example.com', password: 'password123', score: 1800, winrate: 80.0, region: 'Europe' },
+  { name: 'PlayerOne', email: 'player1@example.com', password: 'password123', score: 1200, winrate: 70.2, region: 'Asia' },
+  { name: 'ProGamer', email: 'pro@example.com', password: 'password123', score: 2200, winrate: 85.4, region: 'Australia' },
+  { name: 'AlphaWolf', email: 'alpha@example.com', password: 'password123', score: 2000, winrate: 82.1, region: 'India' },
 ];
 
 // Connect to MongoDB and seed the database
