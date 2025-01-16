@@ -1,12 +1,11 @@
 import express from "express";
 import { authenticate, authorize } from "../middlewares/authMiddleware.js";
 import {signIn, signUp,
-   createReminder, getReminder, postReminder, updateReminders,
+   // createReminder, getReminder, postReminder, updateReminders,
    publicLogin, adminLogin, editorLogin,
    getPost, savePost,
    leaderboardData,
    chatWithAI,
-   // chatPost, chatGet, 
 } from "../controllers/user.js"
 
 const router = express.Router();
@@ -24,7 +23,7 @@ router.post('/post', savePost);
 
 router.get('/leaderboard', leaderboardData);
 router.post("/chat", chatWithAI);
-// router.get('/chat', chatPost);
+
 
 // router.get('/reminder', authenticateToken, getReminder);
 // router.post('/reminder', authenticateToken, postReminder);

@@ -7,7 +7,6 @@ const client = new OpenAI({
   baseURL: "https://api.groq.com/openai/v1"
 });
 
-// Function to get AI response
 export const getGroqResponse = async (prompt) => {
   try {
     const response = await client.chat.completions.create({
